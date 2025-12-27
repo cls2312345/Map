@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Login</title>
+    <style>
+        body { margin: 0; font-family: sans-serif; background: #0f172a; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .card { background: #1e293b; padding: 2rem; border-radius: 12px; width: 300px; border: 1px solid #334155; }
+        input { width: 100%; padding: 10px; margin: 10px 0; background: #0f172a; border: 1px solid #334155; color: white; border-radius: 6px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background: #38bdf8; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+        .hidden { display: none; }
+        .toggle { font-size: 0.8rem; text-align: center; margin-top: 10px; color: #94a3b8; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="card" id="login">
+        <h2>Login</h2>
+        <form action="/login" method="POST"><input name="username" placeholder="Username" required><input type="password" name="password" placeholder="Password" required><button>Enter Map</button></form>
+        <div class="toggle" onclick="t()">Create Account</div>
+    </div>
+    <div class="card hidden" id="reg">
+        <h2>Register</h2>
+        <form action="/register" method="POST"><input name="username" placeholder="Username" required><input type="password" name="password" placeholder="Password" required><button style="background:#10b981">Sign Up</button></form>
+        <div class="toggle" onclick="t()">Back to Login</div>
+    </div>
+    <script>function t(){document.getElementById('login').classList.toggle('hidden');document.getElementById('reg').classList.toggle('hidden');}</script>
+</body>
+</html>
